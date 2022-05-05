@@ -1,3 +1,5 @@
+const dotenv = require('dotenv').config();
+
 var kanbanApi = (function () {
   var kanbanData;
   var cont = 1;
@@ -13,7 +15,7 @@ var kanbanApi = (function () {
   function getData() {
     $.ajax({
       type: "GET",
-      url: "/api/kanban/getById?id=" + sessionStorage.getItem("kanban"),
+      url: "http://localhost:8080"+ "http://localhost:8080/api/kanban/getById?id=" + sessionStorage.getItem("kanban"),
     }).then(function (data) {
       var assignatura = data[0].idKanban.assignatureid.name;
       document.getElementById("nombreassignatura").innerHTML = assignatura;
@@ -21,7 +23,7 @@ var kanbanApi = (function () {
         createColumn(column);
         $.ajax({
           type: "GET",
-          url: "/api/task/getByColumn?id=" + column.id,
+          url: "http://localhost:8080"+ "/api/task/getByColumn?id=" + column.id,
         }).then(function (tasks) {
           tasks.forEach((task) => {
             createItem(task);
@@ -121,6 +123,7 @@ var kanbanApi = (function () {
     t.innerHTML = html;
     return t.content;
   }
+
 
   return {
     getKanban: getData,

@@ -1,7 +1,11 @@
+
+
 function login() {
   var user = document.getElementById("User").value;
-  fetch("/api/customer/login?name=" + user, { method: "POST" })
-    .then((data) => data.json())
+  $.ajax({
+      type: "POST",
+      url:  "http://127.0.0.1:8080" +"/api/customer/login?name=" + user
+    }).then((data) => data.json())
     .then((data) => {
       if (data != null) {
         sessionStorage.setItem("User", data.name);

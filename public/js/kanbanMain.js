@@ -1,8 +1,10 @@
+ 
 var kanban = (function () {
   var module = kanbanApi;
   var stompClient = null;
   var holding = false;
   var holder = null;
+  var connection = topicConnection;
 
   class Packet {
     constructor(
@@ -31,26 +33,27 @@ var kanban = (function () {
     var socket = new SockJS("/stompendpoint");
     stompClient = Stomp.over(socket);
     //subscribe to /topic/newpoint when connections succeed
-    stompClient.connect({}, function (frame) {
-      console.log("Connected: " + frame);
-      stompClient.subscribe(
-        "/topic/kanban." + sessionStorage.getItem("kanban"),
-        function (eventbody) {
-          var packet = JSON.parse(eventbody.body);
-          var newPacket = new Packet(
-            packet.idtask,
-            packet.action,
-            packet.idcolumn,
-            packet.username,
-            packet.idcustomer,
-            packet.ipublic,
-            packet.description,
-            sessionStorage.getItem("kanban")
-          );
-          verificarEvento(newPacket);
-        }
-      );
-    });
+    connection.connect();
+    // stompClient.connect({}, function (frame) {
+    //   console.log("Connected: " + frame);
+    //   stompClient.subscribe(
+    //     "/topic/kanban." + sessionStorage.getItem("kanban"),
+    //     function (eventbody) {
+    //       var packet = JSON.parse(eventbody.body);
+    //       var newPacket = new Packet(
+    //         packet.idtask,
+    //         packet.action,
+    //         packet.idcolumn,
+    //         packet.username,
+    //         packet.idcustomer,
+    //         packet.ipublic,
+    //         packet.description,
+    //         sessionStorage.getItem("kanban")
+    //       );
+    //       verificarEvento(newPacket);
+    //     }
+    //   );
+    // });
   }
 
   function getKanbanData() {
@@ -116,7 +119,7 @@ var kanban = (function () {
         );
         $.ajax({
           type: "POST",
-          url: "/api/kanban",
+          url:  "http://localhost:8080"+ "/api/kanban",
           data: JSON.stringify(newPacket),
           dataType: "json",
           contentType: "application/json; charset=utf-8",
@@ -137,7 +140,7 @@ var kanban = (function () {
       $(".kanban-column").on("click", ".add-item", function (event) {
         $.ajax({
           type: "POST",
-          url:
+          url:  "http://localhost:8080"+
             "/api/task/create?idcus=" +
             sessionStorage.getItem("userId") +
             "&idcolum=" +
@@ -169,7 +172,7 @@ var kanban = (function () {
             );
             $.ajax({
               type: "POST",
-              url: "/api/kanban",
+              url:  "http://localhost:8080"+ "/api/kanban",
               data: JSON.stringify(newPacket),
               dataType: "json",
               contentType: "application/json; charset=utf-8",
@@ -208,7 +211,7 @@ var kanban = (function () {
               );
               $.ajax({
                 type: "POST",
-                url: "/api/kanban",
+                url:  "http://localhost:8080"+ "/api/kanban",
                 data: JSON.stringify(newPacket),
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
@@ -249,7 +252,7 @@ var kanban = (function () {
             );
             $.ajax({
               type: "POST",
-              url: "/api/kanban",
+              url:  "http://localhost:8080"+ "/api/kanban",
               data: JSON.stringify(newPacket),
               dataType: "json",
               contentType: "application/json; charset=utf-8",
@@ -310,7 +313,7 @@ var kanban = (function () {
         );
         $.ajax({
           type: "POST",
-          url: "/api/kanban",
+          url:  "http://localhost:8080"+ "/api/kanban",
           data: JSON.stringify(newPacket),
           dataType: "json",
           contentType: "application/json; charset=utf-8",
@@ -342,7 +345,7 @@ var kanban = (function () {
         );
         $.ajax({
           type: "POST",
-          url: "/api/kanban",
+          url:  "http://localhost:8080"+ "/api/kanban",
           data: JSON.stringify(newPacket),
           dataType: "json",
           contentType: "application/json; charset=utf-8",

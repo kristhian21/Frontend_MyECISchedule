@@ -1,3 +1,5 @@
+
+
 (function () {
   // Schedule Template - by CodyHouse.co
   function ScheduleTemplate(element) {
@@ -474,12 +476,16 @@
   }
 
   (function () {
-    fetch("/api/schedule/one", { method: "GET" })
-      .then((data) => data.json())
+    $.ajax({
+      type: "POST",
+      url:  "http://localhost:8080"+"/api/schedule/one",
+    }).then((data) => data.json())
       .then((data) => {
         data.forEach((element) => {
-          fetch("/api/schedule/assiganture?id=" + element.id, { method: "GET" })
-            .then((res) => res.json())
+          $.ajax({
+      type: "POST",
+      url:  "http://localhost:8080"+"/api/schedule/assiganture?id=" + element.id,
+    }).then((res) => res.json())
             .then((res) => {
               res.forEach((date) => {
                 document

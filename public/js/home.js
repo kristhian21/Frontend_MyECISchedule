@@ -1,7 +1,8 @@
+
 try {
   var nombre = sessionStorage.getItem("User");
   if (nombre != null) {
-    fetch("navbar.html")
+    fetch( "navbar.html")
       .then((res) => res.text())
       .then((text) => {
         text = text.replace("customer", nombre);
