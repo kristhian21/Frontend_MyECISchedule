@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#navbar {
+  width: 100%;
+  position: fixed;
+}
+
+.code {
+  padding: 3%;
+  background: white;
+  color: blue;
+  width: 80%;
+  border-radius: 10px;
+}
+
+p {
+  color: white;
+  margin: 10%;
+}
+
+.welcome-section {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  background-color: #303841;
+  width: 100%;
+  padding: 5% 0%;
+}
+
+.projects-section h3 {
+  color: white;
+  margin: 5%;
+}
+
+.welcome-section h1 {
+  color: white;
+  font-size: 500%;
+}
+
+.welcome-section p {
+  color: white;
+  margin: 5% 24%;
+  font-size: 200%;
+}
+
+.projects-section {
+  align-items: center;
+  background-color: #9c3bc2;
+  padding: 10% 25%;
+}
+
+.Items {
+  text-align: center;
+}
+
+.section-header {
+  font-size: 300%;
+  text-align: center;
+  color: white;
+  width: 100%;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid white;
+}
+
+#profile-link {
+  align-items: center;
+  background-color: #303841;
+  padding: 10% 25%;
+}
+
+.project-image {
+  width: 40%;
+}

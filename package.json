@@ -1,0 +1,22 @@
+{
+  "name": "frontmyschedule",
+  "version": "1.0.0",
+  "description": "Frontend",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "keywords": [
+    "ES"
+  ],
+  "author": "MyECISchedule",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/eventgrid": "^4.9.0",
+    "azure-storage": "^2.10.7",
+    "express": "^4.18.1",
+    "into-stream": "^7.0.0",
+    "multer": "^1.4.4",
+    "nodemon": "^2.0.16"
+  }
+}

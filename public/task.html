@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/task.css" />
+    <title>Kanban</title>
+  </head>
+
+  <body>
+    <div id="navbar" onload="navbar()"></div>
+    <div class="forma">
+      <h1>Editor de tarea</h1>
+      <div class="taskcontainer">
+        <textarea
+          id="task"
+          class="inputfile"
+          type="text"
+          rows="7"
+          cols="50"
+        ></textarea>
+      </div>
+      <button class="submitbutton button loginsubmit" onclick="save()">
+        Save
+      </button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/task.js"></script>
+  </body>
+</html>

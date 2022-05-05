@@ -1,0 +1,96 @@
+body {
+  margin: 0%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(90deg, #303841, #9c3bc2);
+  background-color: var(--color-bg, linear-gradient(90deg, #b697c2, #9c3bc2));
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  color: white;
+}
+
+.kanban {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: rgb(199, 198, 198) solid 1px;
+  background-color: #9c3bc2;
+  width: auto;
+  margin: 2% 4%;
+}
+
+.kanban-column {
+  padding: 15px;
+  border: whitesmoke solid 1px;
+  border-radius: 10px;
+  margin: 2%;
+}
+
+.column-title {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.item-input {
+  padding: 10px 15px;
+  box-sizing: border-box;
+  color: white;
+  background-color: #55d6abf1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropzone {
+  height: 10px;
+  border-radius: 5px;
+  transition: background 0.15s, height 0.15s;
+}
+
+.delete-dropzone {
+  height: 40px;
+  display: flex;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  transition: background 0.15s, height 0.15s;
+}
+
+.dropzone-active {
+  height: 20px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.delete-dropzone-active {
+  height: 40px;
+  font-size: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: rgba(255, 1, 1, 0.5);
+}
+
+.add-item {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 15px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#eliminar {
+  padding-top: 1.5px;
+}

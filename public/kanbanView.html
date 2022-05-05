@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/kanbanStyle.css" />
+    <script src="js/home.js"></script>
+    <script src="js/header.js"></script>
+    <title>Kanban</title>
+  </head>
+  <div id="navbar" onload="navbar()"></div>
+
+  <body onload="kanban.read()">
+    <main>
+      <h1>Organizador de Tareas</h1>
+      <h1 id="nombreassignatura"></h1>
+      <div id="kanban" class="kanban"></div>
+    </main>
+    <!--Load the JavaScripts-->
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="js/kanbanAPI.js"></script>
+    <script src="js/kanbanMain.js"></script>
+  </body>
+</html>

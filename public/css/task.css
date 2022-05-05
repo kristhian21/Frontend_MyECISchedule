@@ -1,0 +1,70 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(90deg, #303841, #9c3bc2);
+  background-color: var(--color-bg, linear-gradient(90deg, #b697c2, #9c3bc2));
+}
+
+.item-input {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.forma {
+  color: white;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: rgb(199, 198, 198) solid 1px;
+  background-color: #9c3bc2;
+  margin: 2% 4%;
+}
+
+.inputfile {
+  color: #303841;
+}
+
+.submitbutton {
+  font-size: large;
+  margin: 3%;
+  background-color: #55d6abf1;
+  border-radius: 5px;
+}
+
+.loginsubmit {
+  background: whitesmoke;
+  font-size: 14px;
+  margin-top: 30px;
+  padding: 16px 20px;
+  border-radius: 26px;
+  border: 2px solid #55d6abf1;
+  text-transform: uppercase;
+  font-weight: 700;
+  align-items: center;
+  width: 20%;
+  color: #55d6abf1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.loginsubmit:active,
+.loginsubmit:focus,
+.loginsubmit:hover {
+  background-color: #303841;
+  border: 3px solid #55d6abf1;
+  outline: none;
+}
+
+.buttonI {
+  font-size: 24px;
+  margin-left: auto;
+  color: #9c3bc2;
+}
